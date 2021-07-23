@@ -1,15 +1,15 @@
-package one.digitalinnovation.personapi.controller;
+package one.digitalinnovation.personapi.controler;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/v1/people")
-public class PersonController {
+@RequestMapping("/api/v1/person")
+public class PersonApi {
 
 	@GetMapping
-	public String getAPI() {
-		return "API test";
+	public String person() {
+		return "API Test";
 	}
 }
