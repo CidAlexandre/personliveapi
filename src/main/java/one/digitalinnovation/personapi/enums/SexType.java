@@ -10,9 +10,6 @@ public enum SexType {
 	MULHER("Mulher"),
 	NAOBINARIO("Não Binário");
 	
-	SexType(String description) {
-		this.description = description;
-	}
 
 	private final String description;
 }
