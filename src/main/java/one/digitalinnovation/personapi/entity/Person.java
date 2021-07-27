@@ -13,13 +13,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
+import one.digitalinnovation.personapi.enums.SexType;
 
 @Entity
 @Data
@@ -45,15 +44,14 @@ public class Person {
 	
 	@Enumerated(EnumType.STRING)
 	@Column(nullable = false)
-	@OneToOne
-	private String sex;
+	private SexType sex;
 	
 	@Column(nullable = false)
 	private LocalDate birthDate;
 	
 	@Enumerated(EnumType.STRING)
-	@OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE })
 	@Column(nullable = false)
+	@OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE })
 	private List<Phone> phones;
 	
 	@OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})

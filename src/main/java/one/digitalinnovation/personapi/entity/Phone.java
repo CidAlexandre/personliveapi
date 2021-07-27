@@ -1,6 +1,7 @@
 package one.digitalinnovation.personapi.entity;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
@@ -13,18 +14,19 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import one.digitalinnovation.personapi.enums.PhoneType;
 
+@Entity
 @Data
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class Phone {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY) 
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
 	@Enumerated(EnumType.STRING)
 	@Column(nullable = false)
-	private PhoneType type;
+	private PhoneType phone;
 	
 	@Column(nullable = false)
 	private String number;

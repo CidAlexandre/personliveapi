@@ -9,5 +9,5 @@ public enum PhoneType {
 
     HOME,
     MOBILE,
-    COMMERCIAL
+    COMMERCIAL;
 }
