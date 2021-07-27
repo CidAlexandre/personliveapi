@@ -6,10 +6,9 @@ import lombok.Getter;
 @AllArgsConstructor
 @Getter
 public enum SexType {
-	HOMEM("Homem"),
-	MULHER("Mulher"),
-	NAOBINARIO("Não Binário");
+	HOMEM,
+	MULHER,
+	NAOBINARIO;
 	
 
-	private final String description;
 }
