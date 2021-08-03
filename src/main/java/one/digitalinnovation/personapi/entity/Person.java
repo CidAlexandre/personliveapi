@@ -17,9 +17,13 @@ import javax.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import one.digitalinnovation.personapi.enums.SexType;
 
+@Getter
+@Setter
 @Entity
 @Data
 @Builder
@@ -28,7 +32,7 @@ import one.digitalinnovation.personapi.enums.SexType;
 public class Person {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String id;
+	private long id;
 	
 	@Column(nullable = false)
 	private String firstName;
@@ -57,5 +61,5 @@ public class Person {
 	@OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
 	@Column(nullable = false)
 	private List<Address> address;
-	
+
 }

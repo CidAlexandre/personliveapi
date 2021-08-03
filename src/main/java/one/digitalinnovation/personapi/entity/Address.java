@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 public class Address {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String id;
+	private long id;
 	
 	@Column(nullable = false)
 	private String street;
